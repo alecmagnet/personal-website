@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
 
-	const links = ['projects', 'bio', 'resume', 'academic']
+	const links = ['projects', 'about', 'résumé', 'academic']
 
 
 	return (
