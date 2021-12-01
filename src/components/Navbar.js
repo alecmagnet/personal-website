@@ -27,7 +27,7 @@ export default function Navbar() {
 			<Grid item container xs={12} justifyContent="center" sx={{ mt:-1 }}>
 					{links.map(el => 
 						<>
-							<Button variant="text" sx={{ px: 2, mx: 2, height: 50, color: "text.secondary" }}>
+							<Button variant="text" sx={{ px: 2, mx: 2, height: 45, color: "text.secondary" }}>
 								{el}
 							</Button>
 							{links.indexOf(el) === links.length - 1 ?
