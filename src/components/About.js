@@ -5,8 +5,11 @@ export default function About() {
 
 	return (
 		<>
-			<Typography variant="h2" align="center" sx={{ letterSpacing: "7px"}}>
+			<Typography variant="h1" align="center" sx={{ letterSpacing: "7px"}}>
 				Who Am I?
+			</Typography>
+			<Typography variant="body1" align="center" sx={{ my: 5}}>
+				Coming soon . . . 
 			</Typography>
 		</>
 	)

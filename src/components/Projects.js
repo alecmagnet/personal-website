@@ -5,8 +5,11 @@ export default function Projects() {
 
 	return (
 		<>
-			<Typography variant="h2" align="center" sx={{ letterSpacing: "7px"}}>
+			<Typography variant="h1" align="center" sx={{ letterSpacing: "7px"}}>
 				Projects
+			</Typography>
+			<Typography variant="body1" align="center" sx={{ my: 5}}>
+				Coming soon . . . 
 			</Typography>
 		</>
 	)
