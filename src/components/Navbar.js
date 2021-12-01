@@ -10,15 +10,7 @@ export default function Navbar() {
 		fontSize: 'h3.fontSize',
 	}
 
-	// window.addEventListener("resize", function() {
-  // 	if (window.matchMedia("(max-width: 928px)").matches) {
-	// 		subTitleSx = {
-	// 			fontWeight: 'light', 
-	// 			fontSize: 'h5.fontSize',
-	// 			mt: "-2"
-	// 		}
-	// 	}
-	// })
+
 
 	return (
 			<Grid container columnSpacing={2} justifyContent="center" >

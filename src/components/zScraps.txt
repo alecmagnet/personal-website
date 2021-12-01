@@ -1,6 +1,17 @@
 
 
 FROM NAVBAR
+
+	// window.addEventListener("resize", function() {
+  // 	if (window.matchMedia("(max-width: 928px)").matches) {
+	// 		subTitleSx = {
+	// 			fontWeight: 'light', 
+	// 			fontSize: 'h5.fontSize',
+	// 			mt: "-2"
+	// 		}
+	// 	}
+	// })
+	
 		<Grid container columnSpacing={2} justifyContent="center" >
 			<Grid item xs="auto">
 				<Box component="span" sx={{ 
