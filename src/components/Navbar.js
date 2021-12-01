@@ -1,10 +1,16 @@
 import { Grid, Box, Button, Divider, } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
 
 	const links = ['projects', 'about', 'résumé', 'academic']
+	const navigate = useNavigate()
 
+	const handleClick = (elem) => {
+		links.slice(0,2).includes(elem) 
+			? navigate(`/#${elem}`)
+			: navigate(`/${elem.replaceAll('é', 'e')}`)
+	}
 
 	return (
 			<Grid container columnSpacing={2} justifyContent="center">
@@ -25,21 +31,22 @@ export default function Navbar() {
 				</Box>
 			</Grid>
 			<Grid item container xs={12} justifyContent="center" sx={{ mt:-1 }}>
-					{links.map(el => 
+					{links.map(elem => 
 						<>
-							<Button variant="text" sx={{ px: 2, mx: 2, height: 45, color: "text.secondary" }}>
-								{el}
+							<Button 
+								variant="text" 
+								onClick={() => handleClick(elem)}
+								sx={{ px: 2, mx: 2, height: 45, color: "text.secondary" }}
+							>
+								{elem}
 							</Button>
-							{links.indexOf(el) === links.length - 1 ?
+							{links.indexOf(elem) === links.length - 1 ?
 								null
 								: <Divider orientation="vertical" flexItem />	
 							}
-						</>	
+						</>
 					)}
 			</Grid>
-			{/* <Grid item container xs={12} justifyContent="center" sx={{ mt:1 }}>
-				<Divider width="75%" />
-			</Grid> */}
 		</Grid>
 	)
 }

@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
 import './App.css'
+import Resume from './components/Resume'
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -26,15 +27,13 @@ function App() {
       <Navbar />
       <Routes>
 
-        <Route exact path='/resume'>
-          <></>
-        </Route>
+        <Route exact path='/resume' element={<Resume />} />
 
         <Route exact path='/academic'>
           <></>
         </Route>
 
-        <Route exact path='/' element={<Homepage />} />
+        <Route path='/' element={<Homepage />} />
           
       </Routes>
     </ThemeProvider>
