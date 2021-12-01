@@ -1,0 +1,39 @@
+
+
+FROM NAVBAR
+		<Grid container columnSpacing={2} justifyContent="center" >
+			<Grid item xs="auto">
+				<Box component="span" sx={{ 
+				fontWeight: "bold", 
+				fontSize: 'h3.fontSize',
+				pb:0, mb:0 
+			}}>
+				Alec Magnet 
+			</Box>
+			</Grid>
+			<Grid item xs="auto">
+				<Box component="span" sx={subTitleSx}> is a software engineer</Box>
+			</Grid>
+			<Grid item xs={12}>
+
+			</Grid>
+		</Grid>
+
+
+	<Grid container columnSpacing={2} justifyContent="center" >
+			<Grid item container sx="{12}" justifyContent="center">
+				<Typography variant="h3" sx={{ 
+					fontWeight: "bold", 
+					pb:0, mb:0 
+				}}>
+					Alec Magnet 
+				</Typography>
+			</Grid>
+			<Grid item container sx="{12}" justifyContent="center">
+				<Typography variant="h6" sx={{ 
+					fontWeight: 350, 
+					pb:0, mb:0 
+				}}>
+					ancient wizard and full-stack software engineer
+				</Typography>
+			</Grid>

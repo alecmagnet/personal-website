@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -24,7 +24,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navbar />
-      <Switch>
+      <Routes>
 
         <Route exact path='/resume'>
           <></>
@@ -34,11 +34,9 @@ function App() {
           <></>
         </Route>
 
-        <Route exact path='/'>
-          <Homepage />
-        </Route>
-
-      </Switch>
+        <Route exact path='/' element={<Homepage />} />
+          
+      </Routes>
     </ThemeProvider>
   )
 }
