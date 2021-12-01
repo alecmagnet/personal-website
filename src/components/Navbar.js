@@ -1,5 +1,6 @@
-import { Grid, Box, Button, Divider, } from '@mui/material'
+import { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Grid, Box, Button, Divider, } from '@mui/material'
 
 export default function Navbar() {
 
@@ -31,8 +32,8 @@ export default function Navbar() {
 				</Box>
 			</Grid>
 			<Grid item container xs={12} justifyContent="center" sx={{ mt:-1 }}>
-					{links.map(elem => 
-						<>
+					{links.map((elem, index) => 
+						<Fragment key={index}>
 							<Button 
 								variant="text" 
 								onClick={() => handleClick(elem)}
@@ -44,7 +45,7 @@ export default function Navbar() {
 								null
 								: <Divider orientation="vertical" flexItem />	
 							}
-						</>
+						</Fragment>
 					)}
 			</Grid>
 		</Grid>
