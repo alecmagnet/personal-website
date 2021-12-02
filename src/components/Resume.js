@@ -1,12 +1,21 @@
-import { useNavigate } from 'react-router-dom'
+import { useRef, useEffect } from "react"
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Typography, Grid, Box, } from '@mui/material'
 
 
 export default function Resume() {
+	const location = useLocation()
+	const reference = useRef()
 	const navigate = useNavigate()
 	const handleProjectClick = () => {
 		navigate('/#projects')
 	}
+
+	useEffect(() => {
+		if (location.hash.length > 0) reference.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+	}, [location, reference])
+
+	const isHashElem = (id) => {if (location.hash.includes(id)) return <div ref={reference}/>}
 
 	return (
 		<Grid container spacing={2} justifyContent="center">
@@ -60,7 +69,8 @@ export default function Resume() {
 					</Box>  
 				</Typography> */}
 
-				<Typography id="experience" variant="h6" align="center" sx={{ mt: 4, mb: 1, }}>
+				{isHashElem('experience')}
+				<Typography variant="h6" align="center" sx={{ mt: 4, mb: 1, }}>
 					Experience 
 				</Typography>
 				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
