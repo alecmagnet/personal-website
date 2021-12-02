@@ -18,14 +18,14 @@ export default function Homepage() {
 		<Grid container spacing={2}>
 
 			{isHashElem('projects')}
-			<Grid id="projects" item container sx={12} justifyContent="center">
+			<Grid id="projects" item container xs={12} justifyContent="center">
 				<div >
 					<Projects />
 				</div>
 			</Grid>
 
 			{isHashElem('about')}
-			<Grid id="about" item container sx={12} justifyContent="center">
+			<Grid id="about" item container xs={12} justifyContent="center">
 				<div >
 					<About />
 				</div>
