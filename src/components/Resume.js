@@ -80,6 +80,9 @@ export default function Resume() {
 					</ul>
 				</Typography>
 
+
+				<Typography variant="h6" sx={{ mt: 5, color: "magenta" }}>TEMPLATE</Typography>
+
 				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
 					Employer
 					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
