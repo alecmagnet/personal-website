@@ -11,7 +11,7 @@ FROM NAVBAR
 	// 		}
 	// 	}
 	// })
-	
+
 		<Grid container columnSpacing={2} justifyContent="center" >
 			<Grid item xs="auto">
 				<Box component="span" sx={{ 
@@ -48,3 +48,24 @@ FROM NAVBAR
 					ancient wizard and full-stack software engineer
 				</Typography>
 			</Grid>
+
+
+FROM RESUME
+				<Typography variant="h5" sx={{ fontWeight: "bold", mt: 3, }}>
+					Success Academy High School of the Liberal Arts
+					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
+						New York, NY
+					</Box>
+				</Typography>
+				<Typography variant="h6" sx={{ fontWeight: "normal" }}>
+					English Language Arts Teacher and Academic Advisor
+					<Box component="span" sx={{ float: "right", }}>
+						July 2020 – June 2021
+					</Box>
+				</Typography>
+				<Typography variant="body1" component="div">
+					<ul style={{ marginTop: 0}}>
+						<li>In team of 4, adapted American literature curriculum to remote learning</li>
+						<li>Reviewed outcomes data to revise teaching strategies and raise grades 12% from Q1 to Q4</li>
+					</ul>
+				</Typography>
