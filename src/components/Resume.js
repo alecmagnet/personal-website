@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, Fragment } from "react"
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Typography, Grid, Box, } from '@mui/material'
 
@@ -17,24 +17,6 @@ export default function Resume() {
 
 	const isHashElem = (id) => {if (location.hash.includes(id)) return <div ref={reference}/>}
 
-				// <Typography variant="h5" sx={{ fontWeight: "bold", mt: 3, }}>
-				// 	Success Academy High School of the Liberal Arts
-				// 	<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
-				// 		New York, NY
-				// 	</Box>
-				// </Typography>
-				// <Typography variant="h6" sx={{ fontWeight: "normal" }}>
-				// 	English Language Arts Teacher and Academic Advisor
-				// 	<Box component="span" sx={{ float: "right", }}>
-				// 		July 2020 – June 2021
-				// 	</Box>
-				// </Typography>
-				// <Typography variant="body1" component="div">
-				// 	<ul style={{ marginTop: 0}}>
-				// 		<li>In team of 4, adapted American literature curriculum to remote learning</li>
-				// 		<li>Reviewed outcomes data to revise teaching strategies and raise grades 12% from Q1 to Q4</li>
-				// 	</ul>
-				// </Typography>
 
 
 	const expArr = [
@@ -54,6 +36,7 @@ export default function Resume() {
 		},
 
 		{
+			iden: "higher-ed",
 			employer: "The City College of New York, CUNY",
 			location: "New York, NY",
 			titles: [
@@ -77,6 +60,103 @@ export default function Resume() {
 		},
 
 		{
+			iden: "",
+			employer: "Marymount Manhattan College",
+			location: "New York, NY",
+			titles: [
+				{
+					title: "Adjunct Professor of Writing",
+					dates: "August 2017 – July 2019",
+				},
+			],
+			bulletPoints: [
+				"Developed and taught popular seminar using fan media (fic, zines) to convey the techniques of academic writing and research",
+				"Engaged students and the wider college community by organizing public events on fandom",
+			]
+		},
+
+		{
+			iden: "",
+			employer: "John Jay College of Criminal Justice, CUNY",
+			location: "New York, NY",
+			titles: [
+				{
+					title: "Adjunct Instructor of English",
+					dates: "August 2012 – December 2012",
+				},
+				{
+					title: "Writing across the Curriculum Fellow",
+					dates: "August 2011 – July 2012",
+				},
+			],
+			bulletPoints: [
+				"Designed and taught course on gender and sexuality that earned a 4.9 out of 5 on student evaluations",
+				"Co-authored report on effectiveness of writing courses; assessed student writing and interviewed students about classroom experiences",
+				"Consulted with instructors on improving writing assignments",
+			]
+		},
+	
+		{
+			iden: "",
+			employer: "NAME",
+			location: "New York, NY",
+			titles: [
+				{
+					title: "TITLE",
+					dates: "August 2012 – July 2020",
+				},
+			],
+			bulletPoints: [
+				"POINT",
+				"POINT",
+				"POINT",
+				"POINT",
+			]
+		},
+
+		{
+			iden: "",
+			employer: "NAME",
+			location: "New York, NY",
+			titles: [
+				{
+					title: "TITLE",
+					dates: "August 2012 – July 2020",
+				},
+			],
+			bulletPoints: [
+				"POINT",
+				"POINT",
+				"POINT",
+				"POINT",
+			]
+		},
+
+		{
+			iden: "",
+			employer: "NAME",
+			location: "New York, NY",
+			titles: [
+				{
+					title: "TITLE",
+					dates: "August 2012 – July 2020",
+				},
+			],
+			bulletPoints: [
+				"POINT",
+				"POINT",
+				"POINT",
+				"POINT",
+			]
+		},
+
+
+
+
+
+
+		{
+			iden: "",
 			employer: "NAME",
 			location: "New York, NY",
 			titles: [
@@ -151,8 +231,9 @@ export default function Resume() {
 					Experience 
 				</Typography>
 
-				{expArr.map(elem => 
-					<>
+				{expArr.map((elem, index) => 
+					<Fragment key={index}>
+						{elem.iden === "" ? null : isHashElem(elem.iden)}
 						<Typography variant="h5" sx={{ fontWeight: "bold", mt: 4, }}>
 							{elem.employer}
 							<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
@@ -174,101 +255,15 @@ export default function Resume() {
 								)}
 							</ul>
 						</Typography>
-					</>
+					</Fragment>
 				)}
 
 
 
 
 
-				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
-					The City College of New York, CUNY
-					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
-						New York, NY
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Adjunct Lecturer of English
-					<Box component="span" sx={{ float: "right", }}>
-						August 2012 – July 2020
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Graduate Teaching Fellow
-					<Box component="span" sx={{ float: "right", }}>
-						August 2008 – July 2012
-					</Box>
-					<ul style={{ marginTop: 0}}>
-						<li>Innovated assignments and exercises that influenced teaching across department</li>
-						<li>Led faculty teams for first-year learning communities</li>
-						<li>Mentored students and incoming faculty</li>
-						<li>Consistently scored above 4.5 out of 5 on evaluations</li>
-						<li>Presented 25 research papers at professional conferences and published two well-reviewed scholarly essays </li>
-						<li>Co-authored reports on writing assignment effectiveness in general education courses</li> 
-					</ul>
-				</Typography>
-
-				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
-					Marymount Manhattan College
-					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
-						New York, NY
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Adjunct Professor of Writing
-					<Box component="span" sx={{ float: "right", }}>
-						August 2017 – July 2019
-					</Box>
-					<ul style={{ marginTop: 0}}>
-						<li>Developed and taught popular seminar using fan media (fic, zines) to convey the techniques of academic writing and research</li>
-						<li>Engaged students and the wider college communinity by organizing public events on fandom</li>
-					</ul>
-				</Typography>
-
-				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
-					John Jay College of Criminal Justice, CUNY
-					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
-						New York, NY
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Adjunct Instructor of English
-					<Box component="span" sx={{ float: "right", }}>
-						August 2012 – December 2012
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Writing across the Curriculum Fellow
-					<Box component="span" sx={{ float: "right", }}>
-						August 2011 – July 2012
-					</Box>
-					<ul style={{ marginTop: 0}}>
-						<li>Designed and taught course on gender and sexuality that earned a 4.9 out of 5 on student evaluations</li>
-						<li>Consulted with instructors on improving writing assignments</li>
-						<li>Co-authored report on effectiveness of writing courses; assessed student writing and interviewed students about classroom experiences</li>
-					</ul>
-				</Typography>
 
 
-
-				<Typography variant="h6" sx={{ mt: 5, color: "magenta" }}>TEMPLATE</Typography>
-
-				<Typography variant="body1" sx={{ fontWeight: "bold"}}>
-					Employer
-					<Box component="span" sx={{ float: "right", fontWeight: "normal" }}>
-						New York, NY
-					</Box>
-				</Typography>
-				<Typography variant="body1" component="div">
-					Position
-					<Box component="span" sx={{ float: "right", }}>
-						July 2020 – June 2021
-					</Box>
-					<ul style={{ marginTop: 0}}>
-						<li>Bullet</li>
-						<li>Bullet</li>
-					</ul>
-				</Typography>
 
  			</Grid>
 		</Grid>
